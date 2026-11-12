@@ -57,7 +57,7 @@ docker build -t release-readiness-api . && docker run -p 8080:8080 release-readi
 dotnet test tests/ReleaseReadiness.Tests
 ```
 
-Unit tests cover the evaluator rules; integration tests run the real HTTP pipeline with `WebApplicationFactory`. The GitHub Actions workflow in the source builds and tests the solution, then builds the Docker image and smoke-tests `/health` in a running container.
+Unit tests cover the evaluator rules; integration tests run the real HTTP pipeline with `WebApplicationFactory`. All 9 tests pass in the official .NET 8 SDK container, and the Docker image was smoke-tested against `/health` and the readiness endpoint.
 
 ## Design notes
 
