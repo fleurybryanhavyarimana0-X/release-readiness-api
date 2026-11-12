@@ -57,7 +57,7 @@ docker build -t release-readiness-api . && docker run -p 8080:8080 release-readi
 dotnet test tests/ReleaseReadiness.Tests
 ```
 
-Unit tests cover the evaluator rules; integration tests run the real HTTP pipeline with `WebApplicationFactory`. CI builds and tests on every push, then builds the Docker image and smoke-tests `/health` in a running container.
+Unit tests cover the evaluator rules; integration tests run the real HTTP pipeline with `WebApplicationFactory`. The GitHub Actions workflow in the source builds and tests the solution, then builds the Docker image and smoke-tests `/health` in a running container.
 
 ## Design notes
 
